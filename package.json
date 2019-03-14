@@ -1,6 +1,6 @@
 {
   "name": "newton-checkbox-tree",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A full featured, customizable checkbox tree component. Part of the Newton Common Component family which runs on Zowe plugins.",
   "main": "./dist/commonjs/index.js",
   "module": "./dist/es/index.js",
@@ -22,16 +22,13 @@
     "clean:build": "rm -rf ./build",
     "clean:cache": "rm -rf ./.cache",
     "clean:storybook": "rm -rf ./.out",
-
     "start:demo": "./node_modules/.bin/parcel example/src/index.html --out-dir example/dist --open",
     "build:demo": "./node_modules/.bin/parcel build example/src/index.html --out-dir example/dist --public-url ./",
     "publish:demo": "yarn clean:demo && yarn build:demo && gh-pages -d example/dist",
-
     "build": "yarn clean:dist && yarn build:commonjs && yarn build:esmodules && yarn build:css",
     "build:css": "node-sass src/scss -o dist/css",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src/ --out-dir dist/commonjs --ignore 'src/demo/*','src/stories/*','src/test/*'",
     "build:esmodules": "cross-env BABEL_ENV=esmodules babel src/ --out-dir dist/es --ignore 'src/demo/*','src/stories/*','src/test/*'",
-
     "start:dev": "./node_modules/.bin/parcel ./src/demo/index.dev.html --out-dir build --open",
     "start:prod": "yarn build && ./node_modules/.bin/parcel ./src/demo/index.prod.html --out-dir build --open",
     "start:examples:basic": "./node_modules/.bin/parcel ./src/demo/pages/basic/index.html --out-dir build --open",
@@ -43,16 +40,13 @@
     "start:examples:large-data": "./node_modules/.bin/parcel ./src/demo/pages/large-data/index.html --out-dir build --open",
     "start:examples:no-cascade": "./node_modules/.bin/parcel ./src/demo/pages/no-cascade/index.html --out-dir build --open",
     "start:examples:pessimistic-toggle": "./node_modules/.bin/parcel ./src/demo/pages/pessimistic-toggle/index.html --out-dir build --open",
-
     "test": "cross-env BABEL_ENV=test jest",
     "test:watch": "cross-env BABEL_ENV=test jest --watch",
     "test:details": "cross-env BABEL_ENV=test jest --verbose",
     "test:coverage": "cross-env BABEL_ENV=test jest --coverage --colors",
     "test:snapshot:cleanup": "yarn run test:details -u",
-
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook -o .out",
-
     "build-source-map": "parcel build src/index.js --out-dir build",
     "view-source-map": "source-map-explorer --html build/index.js build/index.js.map > source.html && open source.html"
   },
@@ -110,6 +104,7 @@
     "webpack-stream": "^5.0.0"
   },
   "dependencies": {
+    "@babel/runtime": "^7.3.4",
     "classnames": "^2.2.5",
     "lodash": "^4.17.10",
     "nanoid": "^2.0.0",
