@@ -1,0 +1,10 @@
+/.cache
+/.sonarlint
+/.storybook
+/coverage
+/example
+/src
+/stories
+/storybook-static
+/.idea
+/dist/style.js

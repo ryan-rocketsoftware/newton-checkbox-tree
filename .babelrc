@@ -1,0 +1,14 @@
+{
+  "presets": [
+    "@babel/preset-react",
+    ["@babel/preset-env", { "useBuiltIns": "usage" }]
+  ],
+  "plugins": [
+    "@babel/syntax-object-rest-spread",
+    "@babel/proposal-class-properties",
+    "@babel/syntax-dynamic-import",
+    "@babel/transform-react-jsx",
+    "@babel/transform-modules-commonjs",
+    "@babel/transform-runtime",
+  ]
+}

@@ -1,0 +1,27 @@
+$header-bg-color: #3498db;
+$header-bg-color-secondary: #2c3e50;
+$section-headings-color: #3498db;
+$rct-color: #444;
+$rct-border-color: #ccc;
+
+@import "../../../src/scss/react-checkbox-tree.scss";
+@import "cayman";
+
+.react-checkbox-tree {
+  color: $rct-color;
+  // font-family: 'Roboto', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
+  // font-family: 'IBM Plex Mono', monospace;
+}
+
+.clickable-labels {
+  display: flex;
+
+  > * {
+    width: 50%;
+  }
+}
+
+.expand-all-container {
+  max-width: 400px;
+}
