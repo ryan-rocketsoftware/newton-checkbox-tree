@@ -1,4 +1,4 @@
-{
+/* {
   "presets": [
     "@babel/preset-react",
     ["@babel/preset-env", { "useBuiltIns": "usage" }]
@@ -11,4 +11,53 @@
     "@babel/transform-modules-commonjs",
     "@babel/transform-runtime",
   ]
-}
+} */
+{
+  "presets": [
+    "@babel/preset-react",
+    ["@babel/preset-env", { "useBuiltIns": "usage", "modules": false }]
+  ],
+  "plugins": [
+    "@babel/transform-runtime",
+    "@babel/syntax-object-rest-spread",
+    "@babel/proposal-class-properties",
+    "@babel/syntax-dynamic-import",
+    "@babel/transform-react-jsx",
+    "@babel/transform-modules-commonjs"
+  ],
+  "env": {
+    "commonjs": {
+       "plugins": [
+         "@babel/transform-runtime",
+         ["transform-react-remove-prop-types", { "mode": "wrap" }],
+         "@babel/proposal-class-properties",
+       ],
+       "presets": [ "@babel/env", "@babel/react" ]
+   },
+   "esmodules": {
+      "plugins": [
+        "@babel/transform-runtime",
+        ["transform-react-remove-prop-types", { "mode": "wrap" }],
+        "@babel/proposal-class-properties",
+      ],
+      "presets": [
+        ["@babel/env", { "modules": false }],
+        "@babel/react",
+      ]
+    },
+    "test": {
+      "presets": [
+        "@babel/preset-react",
+        "@babel/preset-env"
+      ],
+      "plugins": [
+        "@babel/transform-runtime",
+        "@babel/syntax-object-rest-spread",
+        "@babel/proposal-class-properties",
+        "@babel/syntax-dynamic-import",
+        "@babel/transform-react-jsx",
+        "@babel/transform-modules-commonjs"
+      ],
+    }
+   }
+  }

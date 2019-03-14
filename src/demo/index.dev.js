@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import CheckboxTree from '../js/CheckboxTree';
-
 import './scss/style.scss';
 
 const nodes = [

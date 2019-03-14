@@ -4,14 +4,12 @@ $section-headings-color: #3498db;
 $rct-color: #444;
 $rct-border-color: #ccc;
 
-@import "../../scss/react-checkbox-tree";
+@import "../../scss/newton-checkbox-tree";
 @import "cayman";
 
-.react-checkbox-tree {
+.newton-checkbox-tree {
   color: $rct-color;
-  // font-family: 'Roboto', sans-serif;
   font-family: 'IBM Plex Sans', sans-serif;
-  // font-family: 'IBM Plex Mono', monospace;
 }
 
 .clickable-labels {

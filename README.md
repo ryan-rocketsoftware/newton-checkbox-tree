@@ -2,16 +2,14 @@
 
 ## Overview
 
-This library is a fork of react-checkbox-tree. This forked version has numerous changes from the origional sourced repository.
-The build, test and serve process and tasks are all new and updated to modern tooling and practices using Parcel, Jest, Enzyme
-and Babel.
+Newton Checkbox Tree component renders a tree of items that contain configurable checkboxes, icons, labels and events. The 
+component is extensible and customizable at the global and individual node level. The style used within the component is 
+implemented with IBM Carbon Design System framework.
 
-The origional version had a complicated build process using Gulp, Ruby Gem's along with other depenedencies which made it 
-difficult to add enhancements and new functionality. This version is extrememly simple to build, test and run.
+The build, test, serve, package and deploy tasks use modern tooling and practices with Parcel, Jest, Enzyme, Storybook and Babel. 
+All of the tasks are extrememly simple to execute which allows for excellent development environment.
 
-Lastly, this library will be implemented within the Newton Common Components library and a name change is most likely to happen.
-Unitl then you can add new functionality, tests and styles with your pull requests. 
-
+This component is part of the Newton Component family. Eventually it will be moved into the Newton Common Component library.
 
 ## Usage
 
@@ -38,7 +36,6 @@ a few of the major commands needed to get started.
 - `test:coverage` - Run all tests with code coverage
 - `test:snapshot:cleanup` - Remove old outdated snapshots prior to running tests
 
-
 ### TODO ###
 
 Eventually this library will be availablke via NPM registry. The commands below are just examples on how to install this 
@@ -47,13 +44,13 @@ library once its setup. It doesnt work yet.
 Using yarn:
 
 ```
-yarn add @nwtn/common-components/react-checkbox-tree
+yarn add newton-checkbox-tree
 ```
 
 Using npm:
 
 ```
-npm install @nwtn/common-components/react-checkbox-tree --save
+npm install newton-checkbox-tree --save
 ```
 
 > **Note** &ndash; This library makes use of [Font Awesome](http://fontawesome.io/) styles and expects them to be loaded in the browser.
@@ -63,16 +60,14 @@ npm install @nwtn/common-components/react-checkbox-tree --save
 
 For your convenience, the library's styles can be consumed utilizing one of the following files:
 
-* `node_modules/@nwtn/common-components/react-checkbox-tree/lib/react-checkbox-tree.css`
-* `node_modules/@nwtn/common-components/react-checkbox-tree/src/less/react-checkbox-tree.less`
-* `node_modules/@nwtn/common-components/react-checkbox-tree/src/scss/react-checkbox-tree.scss`
+* `newton-checkbox-tree/dist/css/newton-checkbox-tree.css`
+* `newton-checkbox-tree/src/scss/newton-checkbox-tree.scss`
 
 Either include one of these files in your stylesheets or utilize a CSS loader:
 
 ``` javascript
-import '@nwtn/common-components/react-checkbox-tree/lib/react-checkbox-tree.css';
+import 'newton-checkbox-tree/dist/css/newton-checkbox-tree.css';
 ```
-
 
 ### Render Component
 
@@ -80,7 +75,7 @@ A quick usage example is included below. Note that the react-checkbox-tree compo
 
 ``` jsx
 import React from 'react';
-import CheckboxTree from '@nwtn/common-components/react-checkbox-tree';
+import CheckboxTree from 'newton-checkbox-tree';
 
 const nodes = [{
     value: 'mars',

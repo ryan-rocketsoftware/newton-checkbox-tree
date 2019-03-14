@@ -6,7 +6,7 @@ import CheckboxTree from '../js/CheckboxTree';
 
 import '../demo/scss/style.scss';
 
-const nodes2 = [{
+const nodes = [{
     value: 'NWTDB4',
     label: 'NWTDB4',
     category: 'Database',
@@ -121,16 +121,6 @@ const state = {
     ],
 };
 
-/* let onCheck = (checked) => {
-    console.log('checked', checked);
-    state.checked.push({checked});
-}
-
-let onExpand = (expanded) => {
-    console.log('expanded', expanded);
-    state.expanded.push({expanded});
-} */
-
 storiesOf('CheckboxTree', module)
   .add('basic example', () => {
 
@@ -139,7 +129,7 @@ storiesOf('CheckboxTree', module)
 
     const showNodeIcon = boolean('showNodeIcon', true);
     const noCascade = boolean('noCascade', true);
-    const nodes = object('nodes', [{
+    const nodes2 = object('nodes', [{
         value: 'NWTDB4',
         label: 'NWTDB4',
         category: 'Database'

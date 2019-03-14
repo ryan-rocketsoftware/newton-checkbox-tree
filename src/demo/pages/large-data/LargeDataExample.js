@@ -1,7 +1,7 @@
 import React from 'react';
 import CheckboxTree from '../../../js/CheckboxTree';
 
-import '../../../scss/react-checkbox-tree.scss';
+import '../../../scss/newton-checkbox-tree.scss';
 
 const parents = [];
 

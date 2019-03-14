@@ -334,7 +334,7 @@ class CheckboxTree extends React.Component {
         const treeNodes = this.renderTreeNodes(nodes);
 
         const className = classNames({
-            'react-checkbox-tree': true,
+            'newton-checkbox-tree': true,
             'rct-disabled': disabled,
             'rct-native-display': nativeCheckboxes,
         });

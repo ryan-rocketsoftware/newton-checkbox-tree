@@ -7,7 +7,7 @@ import TreeNode from '../js/TreeNode';
 
 describe('<CheckboxTree />', () => {
     describe('component', () => {
-        it('should render the react-checkbox-tree container', () => {
+        it('should render the newton-checkbox-tree container', () => {
             const wrapper = shallow(
                 <CheckboxTree
                     nodes={[]}
@@ -16,7 +16,7 @@ describe('<CheckboxTree />', () => {
                 />,
             );
 
-            assert.isTrue(wrapper.find('.react-checkbox-tree').exists());
+            assert.isTrue(wrapper.find('.newton-checkbox-tree').exists());
         });
     });
 
@@ -29,7 +29,7 @@ describe('<CheckboxTree />', () => {
                 />,
             );
 
-            assert.isTrue(wrapper.find('.react-checkbox-tree').exists());
+            assert.isTrue(wrapper.find('.newton-checkbox-tree').exists());
         });
     });
 
@@ -39,7 +39,7 @@ describe('<CheckboxTree />', () => {
                 <CheckboxTree disabled nodes={[]} />,
             );
 
-            assert.isTrue(wrapper.find('.react-checkbox-tree.rct-disabled').exists());
+            assert.isTrue(wrapper.find('.newton-checkbox-tree.rct-disabled').exists());
         });
     });
 
@@ -52,7 +52,7 @@ describe('<CheckboxTree />', () => {
                 />,
             );
 
-            assert.isTrue(wrapper.find('.react-checkbox-tree').exists());
+            assert.isTrue(wrapper.find('.newton-checkbox-tree').exists());
         });
     });
 
@@ -121,7 +121,7 @@ describe('<CheckboxTree />', () => {
                 <CheckboxTree nativeCheckboxes nodes={[]} />,
             );
 
-            assert.isTrue(wrapper.find('.react-checkbox-tree.rct-native-display').exists());
+            assert.isTrue(wrapper.find('.newton-checkbox-tree.rct-native-display').exists());
         });
     });
 

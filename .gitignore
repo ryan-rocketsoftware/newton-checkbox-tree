@@ -1,11 +1,12 @@
 /.cache
 /.out
 /.sonarlint
-/coverage
 /build
+/coverage
 /dist
 /example/dist
 /node_modules
 package-lock.json
-yarn.lock
 source.html
+yarn.error.log
+yarn.lock

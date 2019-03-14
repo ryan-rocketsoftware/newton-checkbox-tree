@@ -1,12 +1,23 @@
+# Folders
 /.cache
 /.out
 /.sonarlint
 /.storybook
+/build
 /coverage
 /example
-/src/demo
-/src/js
-/src/less
-/src/stories
-/src/test
-/dist/style.js
+/src
+
+# Files
+/dist/**/style.js
+.babelrc
+.editorconfig
+.gitignore
+.npmignore
+.scss-lint.yml
+jest.config.js
+setup.js
+source.html
+webpack.config.js
+yarn.error.log
+yarn.lock
