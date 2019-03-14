@@ -1,10 +1,12 @@
 /.cache
+/.out
 /.sonarlint
 /.storybook
 /coverage
 /example
-/src
-/stories
-/storybook-static
-/.idea
+/src/demo
+/src/js
+/src/less
+/src/stories
+/src/test
 /dist/style.js

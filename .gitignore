@@ -1,9 +1,10 @@
 /.cache
+/.out
+/.sonarlint
 /coverage
 /build
 /dist
 /example/dist
-/lib
 /node_modules
 package-lock.json
 yarn.lock

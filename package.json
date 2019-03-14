@@ -36,7 +36,7 @@
     "test:coverage": "jest --coverage --colors",
     "test:snapshot:cleanup": "yarn run test:details -u",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "build-storybook": "build-storybook -c .storybook -o .out",
     "build-source-map": "parcel build src/index.js --out-dir build",
     "view-source-map": "source-map-explorer --html build/index.js build/index.js.map > source.html && open source.html"
   },
