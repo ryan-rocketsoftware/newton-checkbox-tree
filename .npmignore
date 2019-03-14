@@ -9,7 +9,6 @@
 /src
 
 # Files
-/dist/**/style.js
 .babelrc
 .editorconfig
 .gitignore
