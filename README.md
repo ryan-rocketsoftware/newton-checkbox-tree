@@ -2,44 +2,55 @@
 
 ## Overview
 
-Newton Checkbox Tree component renders a tree of items that contain configurable checkboxes, icons, labels and events. The 
-component is extensible and customizable at the global and individual node level. The style used within the component is 
-implemented with IBM Carbon Design System framework.
+Newton Checkbox Tree component renders a tree of items that contain configurable checkboxes, icons, labels and events. The component is extensible and customizable at the global and individual node level. The style used within the component is implemented with IBM Carbon Design System framework.
 
-The build, test, serve, package and deploy tasks use modern tooling and practices with Parcel, Jest, Enzyme, Storybook and Babel. 
-All of the tasks are extrememly simple to execute which allows for excellent development environment.
+The build, test, serve, package and deploy tasks use modern tooling and practices with Parcel, Jest, Enzyme, Storybook and Babel. All of the tasks are extrememly simple to execute which allows for excellent development environment.
 
 This component is part of the Newton Component family. Eventually it will be moved into the Newton Common Component library.
 
-## Usage
+## DEVELOPMENT
 
-### Setup Development Environment
+#### SETUP DEVELOPMENT ENVIRONMENT
 
-Quick overview for getting your local development environment setup for development, browsing and publishing. Below are
-a few of the major commands needed to get started.
+Quick overview for getting your local development environment setup for development, browsing and publishing. Below are all of the commands needed to build, test, run and publish the component.
 
-### COMMANDS ###
-- `clean` - Removes dist folder
-- `clean:demo` - Removes example dist folder
-- `clean:build` - Removes build folder
-- `build-component` - Bundle the component for production and for demo
-- `build-demo` - Bundle the demo application
-- `start-demo` - Run the demo in the browser
-- `publish-demo` - Deploy the demo to gh-pages branch
-- `view-source-map` - View the depenendency tree and file size
-- `build:main` - Bundle the component for production
-- `start:dev` - Run the demo in the browser with original source
-- `start:prod` - Run the demo in the browser with production bundle
+#### CLONE REPOSITORY ####
+
+```
+git clone https://github.com/ryan-rocketsoftware/newton-checkbox-tree.git
+```
+
+#### COMMANDS ####
+- `clean` - Deletes dist, demo, build, cache and storybook folders
+- `clean:dist` - Deletes dist folder
+- `clean:demo` - Deletes demo folder
+- `clean:build` - Deletes build folder
+- `clean:cache` - Deletes cache folder
+- `clean:storybook` - Deletes storybook folder
+- `start:demo` - Run demo in the browser
+- `build:demo` - Bundle demo application
+- `publish:demo` - Deploy demo to gh-pages branch
+- `build` - Transpile scss and javascript for production
+- `build:css` - Transpile scss to css for production
+- `build:commonjs` - Transpile javascript to commonjs for production
+- `build:esmodules` - Transpile javascript to esmodule for production
+- `start:dev` - Run demo in the browser with original source
+- `start:prod` - Run demo in the browser with production bundle
 - `start:examples:*` - Run specified demo in the browser. Replace the * with the name of the demo.
-- `test` - Run all tests
-- `test:details` - Run all tests with details
-- `test:coverage` - Run all tests with code coverage
+- `test` - Run tests
+- `test:details` - Run tests with details
+- `test:coverage` - Run tests with code coverage
 - `test:snapshot:cleanup` - Remove old outdated snapshots prior to running tests
+- `storybook` - Run storybook stories in browser
+- `build-storybook` - Build storybook stories
+- `build-source-map` - Bundle source map for analyzer
+- `view-source-map` - View application depenendency tree and bundle size
 
-### TODO ###
+## HOW TO USE
 
-Eventually this library will be availablke via NPM registry. The commands below are just examples on how to install this 
-library once its setup. It doesnt work yet.
+#### INSTALL ####
+
+Add the component to your React application with npm or yarn.
 
 Using yarn:
 
@@ -56,7 +67,7 @@ npm install newton-checkbox-tree --save
 > **Note** &ndash; This library makes use of [Font Awesome](http://fontawesome.io/) styles and expects them to be loaded in the browser.
 
 
-### Include CSS
+#### INCLUDE CSS
 
 For your convenience, the library's styles can be consumed utilizing one of the following files:
 
@@ -67,22 +78,24 @@ Either include one of these files in your stylesheets or utilize a CSS loader:
 
 ``` javascript
 import 'newton-checkbox-tree/dist/css/newton-checkbox-tree.css';
+import 'newton-checkbox-tree/src/scss/newton-checkbox-tree.scss';
 ```
 
-### Render Component
+#### RENDER COMPONENT
 
-A quick usage example is included below. Note that the react-checkbox-tree component is [controlled](https://facebook.github.io/react/docs/forms.html#controlled-components). In other words, it is stateless. You must update its `checked` and `expanded` properties whenever a change occurs.
+A quick usage example is included below. Note that the newton-checkbox-tree component is [controlled](https://facebook.github.io/react/docs/forms.html#controlled-components). In other words, it is stateless. You must update its `checked` and `expanded` properties whenever a change occurs.
 
 ``` jsx
 import React from 'react';
 import CheckboxTree from 'newton-checkbox-tree';
 
 const nodes = [{
-    value: 'mars',
-    label: 'Mars',
+    value: 'user',
+    label: 'user',
+    category: 'table',
     children: [
-        { value: 'phobos', label: 'Phobos' },
-        { value: 'deimos', label: 'Deimos' },
+        { value: 'name', label: 'name', category: 'field' },
+        { value: 'address', label: 'address', category: 'field' },
     ],
 }];
 
@@ -108,9 +121,9 @@ class Widget extends React.Component {
 
 All node objects **must** have a unique `value`. This value is serialized into the `checked` and `expanded` arrays and is also used for performance optimizations.
 
-#### Changing the Default Icons
+#### CHANGING DEFAULT ICONS
 
-By default, **react-checkbox-tree** uses Font Awesome for the various icons that appear in the tree. To change the defaults, simply pass in the `icons` property and override the defaults. Note that you can override as many or as little icons as you like:
+By default, **newton-checkbox-tree** uses Font Awesome for the various icons that appear in the tree. To change the defaults, simply pass in the `icons` property and override the defaults. Note that you can override as many or as little icons as you like:
 
 ``` jsx
 <CheckboxTree
@@ -134,7 +147,6 @@ If you are using the [`react-fontawesome`](https://github.com/FortAwesome/react-
 
 ``` jsx
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
 ...
 
 <CheckboxTree
@@ -154,7 +166,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 />
 ```
 
-### Properties
+#### COMPONENT PROPERTIES
 
 | Property             | Type     | Description                                                                                                            | Default     |
 | -------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------- | ----------- |
@@ -182,7 +194,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 #### `onCheck` and `onExpand`
 
-#### Node Properties
+onCheck and onExpand events must be implemented in your React component in order to update newton checkbox tree checked and expanded state. Clicking the checkbox or clicking the expand icon will not update the components state due to the fact that its a stateless component.
+
+#### NODE PROPERTIES
 
 Individual nodes within the `nodes` property can have the following structure:
 
