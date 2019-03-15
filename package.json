@@ -12,8 +12,15 @@
     "type": "git",
     "url": "https://github.com/ryan-rocketsoftware/newton-checkbox-tree"
   },
+  "keywords": [
+    "z/os",
+    "zowe",
+    "newton common component",
+    "react component",
+    "checkbox tree"
+  ],
   "author": {
-    "name": "ryan-rocketsoftware"
+    "name": "ryan c. martin"
   },
   "scripts": {
     "clean": "yarn clean:dist && yarn clean:demo && yarn clean:build && yarn clean:cache && yarn clean:storybook",
