@@ -1,10 +1,10 @@
 {
   "name": "newton-checkbox-tree",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "A full featured, customizable checkbox tree component. Part of the Newton Common Component family which runs on Zowe plugins.",
   "main": "./dist/commonjs/index.js",
   "module": "./dist/es/index.js",
-  "types": "./src/index.d.ts",
+  "types": "./dist/types/index.d.ts",
   "files": [
     "dist"
   ],
@@ -23,19 +23,28 @@
     "name": "ryan c. martin"
   },
   "scripts": {
+    "//": " --- CLEAN ---",
     "clean": "yarn clean:dist && yarn clean:demo && yarn clean:build && yarn clean:cache && yarn clean:storybook",
-    "clean:dist": "rm -rf ./dist",
-    "clean:demo": "rm -rf ./example/dist",
-    "clean:build": "rm -rf ./build",
-    "clean:cache": "rm -rf ./.cache",
-    "clean:storybook": "rm -rf ./.out",
+    "clean:dist": "rimraf ./dist",
+    "clean:demo": "rimraf ./example/dist",
+    "clean:build": "rimraf ./build",
+    "clean:cache": "rimraf ./.cache",
+    "clean:storybook": "rimraf ./.out",
+
+    "//": " --- DEMO ---",
     "start:demo": "./node_modules/.bin/parcel example/src/index.html --out-dir example/dist --open",
     "build:demo": "./node_modules/.bin/parcel build example/src/index.html --out-dir example/dist --public-url ./",
     "publish:demo": "yarn clean:demo && yarn build:demo && gh-pages -d example/dist",
-    "build": "yarn clean:dist && yarn build:commonjs && yarn build:esmodules && yarn build:css",
+
+    "//": " --- BUILD ---",
+    "build": "yarn clean:dist && yarn build:commonjs && yarn build:esmodules && yarn build:css && yarn copy:scss && yarn copy:type",
     "build:css": "node-sass src/scss -o dist/css",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src/ --out-dir dist/commonjs --ignore 'src/demo/*','src/stories/*','src/test/*'",
     "build:esmodules": "cross-env BABEL_ENV=esmodules babel src/ --out-dir dist/es --ignore 'src/demo/*','src/stories/*','src/test/*'",
+    "copy:scss": "copyup src/scss/newton-checkbox-tree.scss dist",
+    "copy:type": "copyfiles -u 1 src/index.d.ts dist/types",
+
+    "//": " --- EXAMPLES ---",
     "start:dev": "./node_modules/.bin/parcel ./src/demo/index.dev.html --out-dir build --open",
     "start:prod": "yarn build && ./node_modules/.bin/parcel ./src/demo/index.prod.html --out-dir build --open",
     "start:examples:basic": "./node_modules/.bin/parcel ./src/demo/pages/basic/index.html --out-dir build --open",
@@ -47,6 +56,8 @@
     "start:examples:large-data": "./node_modules/.bin/parcel ./src/demo/pages/large-data/index.html --out-dir build --open",
     "start:examples:no-cascade": "./node_modules/.bin/parcel ./src/demo/pages/no-cascade/index.html --out-dir build --open",
     "start:examples:pessimistic-toggle": "./node_modules/.bin/parcel ./src/demo/pages/pessimistic-toggle/index.html --out-dir build --open",
+
+    "//": " --- TEST ---",
     "test": "cross-env BABEL_ENV=test jest",
     "test:watch": "cross-env BABEL_ENV=test jest --watch",
     "test:details": "cross-env BABEL_ENV=test jest --verbose",
@@ -54,6 +65,8 @@
     "test:snapshot:cleanup": "yarn run test:details -u",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook -o .out",
+
+    "//": " --- ANALYZE ---",
     "build-source-map": "parcel build src/index.js --out-dir build",
     "view-source-map": "source-map-explorer --html build/index.js build/index.js.map > source.html && open source.html"
   },
@@ -88,6 +101,7 @@
     "babel-register": "^6.26.0",
     "chai": "^4.0.0",
     "connect-history-api-fallback": "^1.6.0",
+    "copyfiles": "^2.1.0",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
     "enzyme": "^3.0.0",
@@ -100,8 +114,10 @@
     "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.11.0",
     "parcel-bundler": "^1.6.2",
+    "rimraf": "^2.6.3",
     "sass": "^1.17.2",
     "sass-loader": "^7.1.0",
+    "screwy": "^1.0.5",
     "source-map-explorer": "^1.7.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.4.1",
