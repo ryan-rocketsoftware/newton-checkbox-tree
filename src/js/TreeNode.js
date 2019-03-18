@@ -9,34 +9,33 @@ import languageShape from './shapes/languageShape';
 
 class TreeNode extends React.Component {
     static propTypes = {
+        category: PropTypes.string,
         checked: PropTypes.number.isRequired,
+        children: PropTypes.node,
+        className: PropTypes.string,
         disabled: PropTypes.bool.isRequired,
         expandDisabled: PropTypes.bool.isRequired,
         expanded: PropTypes.bool.isRequired,
+        expandOnClick: PropTypes.bool,
+        icon: PropTypes.node,
         icons: iconsShape.isRequired,
         isLeaf: PropTypes.bool.isRequired,
         isParent: PropTypes.bool.isRequired,
         label: PropTypes.node.isRequired,
         lang: languageShape.isRequired,
+        onCheck: PropTypes.func.isRequired,
+        onClick: PropTypes.func,
+        onExpand: PropTypes.func.isRequired,
         optimisticToggle: PropTypes.bool.isRequired,
         showNodeIcon: PropTypes.bool.isRequired,
+        showCheckbox: PropTypes.bool,
+        showIcon: PropTypes.bool,
+        title: PropTypes.string,
         treeId: PropTypes.string.isRequired,
         value: PropTypes.oneOfType([
             PropTypes.string,
             PropTypes.number,
         ]).isRequired,
-        onCheck: PropTypes.func.isRequired,
-        onExpand: PropTypes.func.isRequired,
-
-        children: PropTypes.node,
-        className: PropTypes.string,
-        expandOnClick: PropTypes.bool,
-        icon: PropTypes.node,
-        showCheckbox: PropTypes.bool,
-        showIcon: PropTypes.bool,
-        title: PropTypes.string,
-        category: PropTypes.string,
-        onClick: PropTypes.func,
     };
 
     static defaultProps = {

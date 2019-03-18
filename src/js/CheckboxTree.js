@@ -14,13 +14,11 @@ import nodeShape from './shapes/nodeShape';
 
 class CheckboxTree extends React.Component {
     static propTypes = {
-        nodes: PropTypes.arrayOf(nodeShape).isRequired,
-
         checked: listShape,
         disabled: PropTypes.bool,
         expandDisabled: PropTypes.bool,
-        expandOnClick: PropTypes.bool,
         expanded: listShape,
+        expandOnClick: PropTypes.bool,
         icons: iconsShape,
         id: PropTypes.string,
         lang: languageShape,
@@ -28,14 +26,15 @@ class CheckboxTree extends React.Component {
         nameAsArray: PropTypes.bool,
         nativeCheckboxes: PropTypes.bool,
         noCascade: PropTypes.bool,
+        nodes: PropTypes.arrayOf(nodeShape).isRequired,
+        onCheck: PropTypes.func,
+        onClick: PropTypes.func,
+        onExpand: PropTypes.func,
         onlyLeafCheckboxes: PropTypes.bool,
         optimisticToggle: PropTypes.bool,
         showExpandAll: PropTypes.bool,
         showNodeIcon: PropTypes.bool,
         showNodeTitle: PropTypes.bool,
-        onCheck: PropTypes.func,
-        onClick: PropTypes.func,
-        onExpand: PropTypes.func,
     };
 
     static defaultProps = {
