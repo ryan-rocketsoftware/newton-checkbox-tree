@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 
 const nodeShape = {
-    label: PropTypes.node.isRequired,
-    value: PropTypes.oneOfType([
+    category: PropTypes.string.isRequired,
+    disabled: PropTypes.bool,
+    icon: PropTypes.node,
+    id: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number,
     ]).isRequired,
-
-    disabled: PropTypes.bool,
-    icon: PropTypes.node,
+    label: PropTypes.node.isRequired,
     showCheckbox: PropTypes.bool,
     title: PropTypes.string,
 };

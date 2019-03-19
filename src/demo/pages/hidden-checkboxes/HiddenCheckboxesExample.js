@@ -5,79 +5,79 @@ import '../../../scss/newton-checkbox-tree.scss';
 
 const nodes = [
     {
-        value: 'favorite-empires',
+        id: 'favorite-empires',
         label: 'Favorite Empires',
         children: [
             {
-                value: 'classical-era',
+                id: 'classical-era',
                 label: 'Classical Era',
                 children: [
                     {
-                        value: 'persian',
+                        id: 'persian',
                         label: 'First Persian Empire',
                     },
                     {
-                        value: 'qin',
+                        id: 'qin',
                         label: 'Qin Dynasty',
                     },
                     {
-                        value: 'spqr',
+                        id: 'spqr',
                         label: 'Roman Empire',
                     },
                 ],
             },
             {
-                value: 'medieval-era',
+                id: 'medieval-era',
                 label: 'Medieval Era',
                 children: [
                     {
-                        value: 'abbasid',
+                        id: 'abbasid',
                         label: 'Abbasid Caliphate',
                     },
                     {
-                        value: 'byzantine',
+                        id: 'byzantine',
                         label: 'Byzantine Empire',
                     },
                     {
-                        value: 'holy-roman',
+                        id: 'holy-roman',
                         label: 'Holy Roman Empire',
                     },
                     {
-                        value: 'ming',
+                        id: 'ming',
                         label: 'Ming Dynasty',
                     },
                     {
-                        value: 'mongol',
+                        id: 'mongol',
                         label: 'Mongol Empire',
                     },
                 ],
             },
             {
-                value: 'modern-era',
+                id: 'modern-era',
                 label: 'Modern Era',
                 children: [
                     {
-                        value: 'aztec',
+                        id: 'aztec',
                         label: 'Aztec Empire',
                     },
                     {
-                        value: 'british',
+                        id: 'british',
                         label: 'British Empire',
                     },
                     {
-                        value: 'inca',
+                        id: 'inca',
                         label: 'Inca Empire',
                     },
                     {
-                        value: 'qing',
+                        id: 'qing',
                         label: 'Qing Dynasty',
                     },
                     {
-                        value: 'russian',
+                        id: 'russian',
                         label: 'Russian Empire',
                     },
                     {
-                        value: 'spanish',
+                        id: 'spanish',
                         label: 'Spanish Empire',
                     },
                 ],

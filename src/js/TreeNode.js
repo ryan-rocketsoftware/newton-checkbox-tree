@@ -19,6 +19,10 @@ class TreeNode extends React.Component {
         expandOnClick: PropTypes.bool,
         icon: PropTypes.node,
         icons: iconsShape.isRequired,
+        id: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
+        ]).isRequired,
         isLeaf: PropTypes.bool.isRequired,
         isParent: PropTypes.bool.isRequired,
         label: PropTypes.node.isRequired,
@@ -32,10 +36,6 @@ class TreeNode extends React.Component {
         showIcon: PropTypes.bool,
         title: PropTypes.string,
         treeId: PropTypes.string.isRequired,
-        value: PropTypes.oneOfType([
-            PropTypes.string,
-            PropTypes.number,
-        ]).isRequired,
     };
 
     static defaultProps = {
@@ -59,16 +59,16 @@ class TreeNode extends React.Component {
     }
 
     onCheck() {
-        const { value, onCheck } = this.props;
+        const { id, onCheck } = this.props;
 
-        onCheck({ value, checked: this.getCheckState({ toggle: true }) });
+        onCheck({ id, checked: this.getCheckState({ toggle: true }) });
     }
 
     onClick() {
         const {
             expandOnClick,
+            id,
             isParent,
-            value,
             onClick,
         } = this.props;
 
@@ -77,13 +77,13 @@ class TreeNode extends React.Component {
             this.onExpand();
         }
 
-        onClick({ value, checked: this.getCheckState({ toggle: false }) });
+        onClick({ id, checked: this.getCheckState({ toggle: false }) });
     }
 
     onExpand() {
-        const { expanded, value, onExpand } = this.props;
+        const { expanded, id, onExpand } = this.props;
 
-        onExpand({ value, expanded: !expanded });
+        onExpand({ id, expanded: !expanded });
     }
 
     getCheckState({ toggle }) {
@@ -202,13 +202,13 @@ class TreeNode extends React.Component {
         const {
             checked,
             disabled,
+            id,
+            onClick,
             title,
             treeId,
-            value,
-            onClick,
         } = this.props;
         const clickable = onClick !== null;
-        const inputId = `${treeId}-${String(value).split(' ').join('_')}`;
+        const inputId = `${treeId}-${String(id).split(' ').join('_')}`;
 
         const render = [(
             <label key={0} htmlFor={inputId} title={title}>
@@ -217,8 +217,8 @@ class TreeNode extends React.Component {
                     disabled={disabled}
                     id={inputId}
                     indeterminate={checked === 2}
-                    onClick={this.onCheck}
                     onChange={() => {}}
+                    onClick={this.onCheck}
                 />
                 <span className="rct-checkbox">
                     {this.renderCheckboxIcon()}

@@ -1,6 +1,6 @@
 {
   "name": "newton-checkbox-tree",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A full featured, customizable checkbox tree component. Part of the Newton Common Component family which runs on Zowe plugins.",
   "main": "./dist/commonjs/index.js",
   "module": "./dist/es/index.js",

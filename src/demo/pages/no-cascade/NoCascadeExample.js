@@ -5,79 +5,79 @@ import '../../../scss/newton-checkbox-tree.scss';
 
 const nodes = [
     {
-        value: '/app',
+        id: '/app',
         label: 'app',
         children: [
             {
-                value: '/app/Http',
+                id: '/app/Http',
                 label: 'Http',
                 children: [
                     {
-                        value: '/app/Http/Controllers',
+                        id: '/app/Http/Controllers',
                         label: 'Controllers',
                         children: [{
-                            value: '/app/Http/Controllers/WelcomeController.js',
+                            id: '/app/Http/Controllers/WelcomeController.js',
                             label: 'WelcomeController.js',
                         }],
                     },
                     {
-                        value: '/app/Http/routes.js',
+                        id: '/app/Http/routes.js',
                         label: 'routes.js',
                     },
                 ],
             },
             {
-                value: '/app/Providers',
+                id: '/app/Providers',
                 label: 'Providers',
                 children: [{
-                    value: '/app/Http/Providers/EventServiceProvider.js',
+                    id: '/app/Http/Providers/EventServiceProvider.js',
                     label: 'EventServiceProvider.js',
                 }],
             },
         ],
     },
     {
-        value: '/config',
+        id: '/config',
         label: 'config',
         children: [
             {
-                value: '/config/app.js',
+                id: '/config/app.js',
                 label: 'app.js',
             },
             {
-                value: '/config/database.js',
+                id: '/config/database.js',
                 label: 'database.js',
             },
         ],
     },
     {
-        value: '/public',
+        id: '/public',
         label: 'public',
         children: [
             {
-                value: '/public/assets/',
+                id: '/public/assets/',
                 label: 'assets',
                 children: [{
-                    value: '/public/assets/style.css',
+                    id: '/public/assets/style.css',
                     label: 'style.css',
                 }],
             },
             {
-                value: '/public/index.html',
+                id: '/public/index.html',
                 label: 'index.html',
             },
         ],
     },
     {
-        value: '/.env',
+        id: '/.env',
         label: '.env',
     },
     {
-        value: '/.gitignore',
+        id: '/.gitignore',
         label: '.gitignore',
     },
     {
-        value: '/README.md',
+        id: '/README.md',
         label: 'README.md',
     },
 ];

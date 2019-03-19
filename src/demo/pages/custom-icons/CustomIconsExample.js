@@ -5,37 +5,37 @@ import '../../../scss/newton-checkbox-tree.scss';
 
 const nodes = [
     {
-        value: 'Documents',
+        id: 'Documents',
         label: 'Documents',
         children: [
             {
-                value: 'Employee Evaluations.zip',
+                id: 'Employee Evaluations.zip',
                 label: 'Employee Evaluations.zip',
                 icon: <i className="fa fa-file-archive-o" />,
             },
             {
-                value: 'Expense Report.pdf',
+                id: 'Expense Report.pdf',
                 label: 'Expense Report.pdf',
                 icon: <i className="fa fa-file-pdf-o" />,
             },
             {
-                value: 'notes.txt',
+                id: 'notes.txt',
                 label: 'notes.txt',
                 icon: <i className="fa fa-file-text-o" />,
             },
         ],
     },
     {
-        value: 'Photos',
+        id: 'Photos',
         label: 'Photos',
         children: [
             {
-                value: 'nyan-cat.gif',
+                id: 'nyan-cat.gif',
                 label: 'nyan-cat.gif',
                 icon: <i className="fa fa-file-image-o" />,
             },
             {
-                value: 'SpaceX Falcon9 liftoff.jpg',
+                id: 'SpaceX Falcon9 liftoff.jpg',
                 label: 'SpaceX Falcon9 liftoff.jpg',
                 icon: <i className="fa fa-file-image-o" />,
             },

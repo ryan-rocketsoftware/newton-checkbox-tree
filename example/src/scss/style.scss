@@ -18,6 +18,25 @@ $rct-border-color: #ccc;
   > * {
     width: 50%;
   }
+
+  strong {
+    color: #3498db;
+  }
+
+  .demo-hide-nodeinfo {
+    display: none;
+  }
+
+  .demo-show-nodeinfo {
+    display: block;
+    font-size: 0.9em;
+    color: #555;
+
+    label {
+      font-size: 0.8em;
+      color: #777;
+    }
+  }
 }
 
 .expand-all-container {

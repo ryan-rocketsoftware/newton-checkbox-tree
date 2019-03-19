@@ -35,9 +35,10 @@ class NodeModel {
         nodes.forEach((node, index) => {
             const isParent = this.nodeHasChildren(node);
 
-            this.flatNodes[node.value] = {
+            this.flatNodes[node.id] = {
+                id: node.id,
                 label: node.label,
-                value: node.value,
+                category: node.category,
                 children: node.children,
                 parent,
                 isParent,
@@ -110,7 +111,7 @@ class NodeModel {
     }
 
     toggleChecked(node, isChecked, noCascade) {
-        const flatNode = this.flatNodes[node.value];
+        const flatNode = this.flatNodes[node.id];
 
         if (flatNode.isLeaf || noCascade) {
             if (node.disabled) {
@@ -118,7 +119,7 @@ class NodeModel {
             }
 
             // Set the check status of a leaf node or an uncoupled parent
-            this.toggleNode(node.value, 'checked', isChecked);
+            this.toggleNode(node.id, 'checked', isChecked);
         } else {
             // Percolate check status down to all children
             flatNode.children.forEach((child) => {
